@@ -18,7 +18,7 @@ login_manager.login_view='/'
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Users.query.get(int(user_id))
+    return Societies.query.get(int(user_id))
 
 #########################
 
@@ -43,7 +43,8 @@ def soclogin():
         society = Societies.query.filter_by(username = username_check).first()
         if (password_check == society.password):
             login_user(society)
-            return "Logged in, welcome back " + str(society.name)
+            #"Logged in, welcome back " + str(society.name)
+            return redirect('socdash')  
     return render_template('soclogin.html')
 
 @app.route('/stulogin', methods=['GET','POST'])
