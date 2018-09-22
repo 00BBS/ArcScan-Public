@@ -31,9 +31,23 @@ def index():
 '''
 @app.route('/soclogin')
 def soclogin():
+    if request.method == "POST":
+        username_check = request.form['username']
+        password_check = request.form['password']
+        # query based on username
+        society = Societies.query.filter_by(username = username_check).first()
+        if (password == society.password):
+            return "Logged in, welcome back " + society.name
     return render_template('soclogin.html')
 
 @app.route('/stulogin')
 def stulogin():
+    if request.method == "POST":
+        zid_check = request.form['zid']
+        password_check = request.form['password']
+        # query based on username
+        user = Users.query.filter_by(zid = zid_checl).first()
+        if (password == user.password):
+            return "Logged in, welcome back " + user.name
     return render_template('stulogin.html')
 
