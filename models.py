@@ -10,8 +10,9 @@ class Societies(db.Model):
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(60))
+    password = db.Column(db.String(60))
     arc = db.Boolean()
-    zID = db.Column(db.String(8))
+    zid = db.Column(db.String(8))
 
 class Events(db.Model):
     id = db.Column(db.Integer, primary_key = True)
