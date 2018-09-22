@@ -51,3 +51,11 @@ def stulogin():
             return "Logged in, welcome back " + user.name
     return render_template('stulogin.html')
 
+@app.route('/sturegister')
+def sturegister():
+    return render_template('sturegister.html')
+
+@app.route('/socregister')
+def socregister():
+    return socregister('socregister.html')
+
