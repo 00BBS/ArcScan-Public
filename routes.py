@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, session
 from flask_sqlalchemy import SQLAlchemy
+from random_key import *
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/main.db'
@@ -17,14 +18,8 @@ def index():
                     password = request.form['password'])
         db.session.add(new_user)
         db.session.commit()
-        return "Registered"
-        '''
-        # find user
-        user_check = Users.query.filter_by(zid=request.form['zid']).first()
-        if user_check:
-            if user_check.password == request.form['password']:
-                return "registered"
-        '''
+        if user_check.password == request.form['password']:
+                return "registered" ### TODO: REDIRECT TO LOGIN DASHBOARD
     return render_template('index.html')
 
 '''
