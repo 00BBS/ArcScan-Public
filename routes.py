@@ -9,7 +9,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/profile/<user>', methods = ['GET']
-		if:
-			return render_template('')
-		else:
-			return render_template('')
+	if:
+		return render_template('profSoc.html')
+	else:
+		return render_template('profInd.html')
