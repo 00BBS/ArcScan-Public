@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;/* Includes padding and border in the element's total width and height*/
+}
+  body, html{
+    background:#333333;
+    box-sizing: border-box;
+    font-family:ProximaNova-Black,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  #wrap {
+    position: absolute;
+    width:calc(100% - 60px);
+    top: 0px;
+    color: white;
+    left: 30px;
+    z-index: 100;
+
+  }
+
+  a, a:visited, a:active {
+    color: white;
+
+  }
+  label{
+  	color:#89D458;
+  	font-size:24px;
+    line-height: 30px;
+  }
+
+  input[type=text], select, input[type=password]{
+    width: 100%;
+    padding: 10px 10px;
+    display: inline-block;
+  	font-size:16px;
+  	border:none;
+  	line-height:18px;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  input[type=text]:focus, input[type=password]:focus{
+    display: inline-block;
+    text-transform: uppercase;
+  	line-height:18px;
+  	font-size:16px;
+  	border:none;
+    border-bottom: 2px solid #3B84D1;
+    box-sizing: border-box;
+  	outline:none;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+  }
+
+
+  input[type="submit"]{
+  	background-color:white;
+    width: 100%;
+  	border: 1px solid #91E15C ;
+    margin-top: 10px;
+  	color:#333;
+    height: 40px;
+    font-weight: bold;
+  	box-shadow:none;
+  	border-radius: 0px;
+  	vertical-align: center;
+  	text-transform:uppercase;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+  }
+    input[type="submit"]:hover{
+  	background-color:#91E15C;
+    color: white;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+
+  }
+  h1 {
+    color:#89D458;
+    font-size: 40px;
+    text-align: center;
+  }
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+
+  .register-botton {
+    background-color: #91E15C;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+  }

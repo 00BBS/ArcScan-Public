@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  {% block head %}
+  <head>
+    <meta charset="utf-8">
+    <title>ArcScan</title>
+    <link rel="shortcut icon" type="image/gif" href="images/cutefavicon.gif">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <style>
+* {
+  box-sizing: border-box;/* Includes padding and border in the element's total width and height*/
+}
+  body, html{
+    background:#333333;
+    box-sizing: border-box;
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+  }
+
+  #wrap {
+    position: absolute;
+    width:calc(100% - 60px);
+    top: 0px;
+    left: 30px;
+    z-index: 100;
+    
+  }
+
+  label{
+  	color:#91E15C;
+  	font-size:24px;
+    line-height: 30px;
+  }
+
+  input[type=text], select{
+    width: 100%;
+    padding: 10px 10px;
+    display: inline-block;
+  	font-size:16px;
+  	border:none;
+  	line-height:18px;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    margin-bottom: 15px;
+  }
+
+  input[type=text]:focus{
+    display: inline-block;
+  	line-height:18px;
+  	font-size:16px;
+  	border:none;
+    border-bottom: 2px solid #3B84D1;
+    box-sizing: border-box;
+  	outline:none;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+  }
+
+
+  .notes{
+  	height:80px;
+  	resize:none;
+  }
+
+  input[type="submit"]{
+  	background-color:white;
+    width: 100%;
+  	border: 1px solid #91E15C ;
+    margin-top: 10px;
+  	color:#91E15C;
+    height: 40px;
+  	box-shadow:none;
+  	border-radius: 0px;
+  	vertical-align: center;
+  	text-transform:uppercase;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+
+  }
+    input[type="submit"]:hover{
+  	background-color:#91E15C;
+    color: white;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+
+  }
+  h1 {
+    color: #91E15C;
+    text-align: center;
+  }
+
+  #background {
+    position: fixed;
+    width: 100%;
+    /*background-image:url(images/Movie-Night.jpg);*/
+    height:calc(100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    outline-offset: -50px;
+    z-index: 1;
+  }
+
+  </style>
+  </head>
+  {% endblock %}
+  </html>

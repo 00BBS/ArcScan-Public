@@ -1,3 +1,105 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ArcScan</title>
+    <link rel="shortcut icon" type="image/gif" href="images/cutefavicon.gif">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<style>
+ * {
+  box-sizing: border-box;
+}
 
+body {
+  margin:0;
+  background-color: white;
+  font-family:ProximaNova-Black,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+#header h1 {
+    color:#89D458;
+}
+
+#header {
+  background-color: #333;
+  position: absolute;
+  width:100%;
+  background-image:;
+  height: 30%;
+  font-size: 30px;
+  text-align: center;
+}
+
+#main {
+  top: 30%;
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  padding: 30px;
+}
+
+.stubutton {
+  padding: 40px;
+  margin-top: 20px;
+  background-color: white;
+  background-image:url(https://i.imgur.com/mD6HVaH.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(50% - 30px);
+  z-index: 1px;
+  text-align: center;
+
+}
+
+
+a, a:visited, a:active{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.socbutton {
+  padding: 40px;
+  margin-top: 20px;
+  text-align: center;
+  background-image:url(https://i.imgur.com/fvhCpoG.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  height: calc(50% - 30px);
+}
+
+  </style>
+  </head>
+
+  <body>
+  <div id="header">
+
+    <h1><img src="https://i.imgur.com/XhapHY7.png"><br> ArcScan</h1>
+
+  </div>
+
+  <div id="main">
+        <div class="stubutton">
+          <div class="overlay">
+          <a href="{{url_for('stulogin')}}">I am a student</a>
+
+          </div>
+        </div>
+        <div class="socbutton">
+          <div class="overlay">
+          <a href="{{url_for('soclogin')}}">I am a society </a>
+          </div>
+        </div>
+  </div>
+
+  </body>
 </html>
