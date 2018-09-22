@@ -22,4 +22,11 @@ class Events(db.Model):
     starttime = db.Column(db.Time)
     date = db.Column(db.Date)
     secret_code = db.String(6)
+    registered_users = db.relationship("Registered", backref="event")
     society = db.Column(db.Integer,db.ForeignKey("societies.id"))
+
+class Registered(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    user_id = db.relationship("Users", backref="registered") 
+    event_id = db.Column(db.Integer,db.ForeignKey("events.id"))
+
