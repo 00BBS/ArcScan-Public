@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin:0;
+  background-color: white;
+  font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+
+}
+
+#header {
+  position: absolute;
+  width:100%;
+  background-image:;
+  height: 30%;
+  font-size: 30px;
+  text-align: center;
+}
+
+#main {
+  top: 30%;
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  padding: 30px;
+}
+
+.stubutton {
+  margin-top: 20px;
+  background-color: white;
+  background-image:url(../images/student.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(50% - 30px);
+  z-index: 1px;
+
+}
+
+
+.socbutton {
+  margin-top: 20px;
+  background-image:url(../images/society.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  height: calc(50% - 30px);
+}
