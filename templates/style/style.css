@@ -36,10 +36,12 @@
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     margin-bottom: 15px;
+    text-transform: uppercase;
   }
 
   input[type=text]:focus, input[type=password]:focus{
     display: inline-block;
+    text-transform: uppercase;
   	line-height:18px;
   	font-size:16px;
   	border:none;
@@ -67,7 +69,6 @@
     transition: all 0.5s ease-in-out;
   	-moz-transition: all 0.5s ease-in-out;
   	-webkit-transition: all 0.5s ease-in-out;
-
   }
     input[type="submit"]:hover{
   	background-color:#91E15C;

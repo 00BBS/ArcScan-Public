@@ -31,11 +31,35 @@ input[type=text], select {
   width: 100%;
   text-align: center;
   font-weight: bold;
+  text-transform: uppercase;
   font-family:ProximaNova-Black,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+input[type="submit"]{
+  background-color:white;
+  border: 1px solid #333;
+  margin-top: 10px;
+  height: 40px;
+  font-weight: bold;
+  box-shadow:none;
+  border-radius: 0px;
+  padding: 10px;
+  vertical-align: center;
+  text-transform:uppercase;
+  transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+input[type="submit"]:focus {
+  border: 1px solid #333;
+  background: #333;
+  color: white;
+  outline: none;
+}
 
 input[type=text]:focus {
+    text-transform: uppercase;
   	border:none;
     box-sizing: border-box;
   	outline:none;
