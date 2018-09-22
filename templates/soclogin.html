@@ -12,16 +12,18 @@
 
   <body>
   <div id="wrap">
+    <form METHOD = "POST">
     <h1>ArcScan</h1>
     <label> Society: </label> <br>
-    <input name="zid" type="text" placeholder="Your zid...">
+    <input name="username" type="text" placeholder="Your username...">
     <label> Password: </label><br>
     <input name="password" type="password" placeholder="Your password...">
-    <input type="submit" value="login"> </input>
+    <input type="submit" value="login" action="/soclogin"> </input>
+    </form>
+
     <p></p>
     <h2>Don't have an account for your society? </h2>
-    <div class="register-buttton"><a href="socregister.html">Register your society </a></div>
-
+    <div class="register-buttton"><a href="{{url_for('socregister')}}">Register your society </a></div>
   </div>
 
 

@@ -16,12 +16,14 @@
     <div id="header">
       <h1>Dashboard for {{society}}</h1>
     </div>
+    {{% for event in events %}}
     <div id="event-wrap">
       <div class="event-container">
-        <div class="event-name">{{Name of event}}</div>
-        <div class="event-time">{{ Time of event}}</div>
+        <div class="event-name">{{event.name}}</div>
+        <div class="event-time">{{event.starttime}}</div>
       </div>
     </div>
+    {{% endfor %}}
   </div>
   <div id="footer">
     <nav>

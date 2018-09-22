@@ -1,13 +1,14 @@
 from routes import db
+from flask_login import UserMixin
 
-class Societies(db.Model):
+class Societies(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(50))
     username = db.Column(db.String(15))
     password = db.Column(db.String(20))
     events = db.relationship("Events", backref="eventOwner")
 
-class Users(db.Model):
+class Users(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(60))
     password = db.Column(db.String(60))
