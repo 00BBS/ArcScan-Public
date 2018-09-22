@@ -16,9 +16,11 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view='/'
 
+'''
 @login_manager.user_loader
 def load_user(user_id):
     return Users.query.get(int(user_id))
+'''
 
 #########################
 
@@ -42,6 +44,9 @@ def soclogin():
         # query based on username
         society = Societies.query.filter_by(username = username_check).first()
         if (password_check == society.password):
+            @login_manager.user_loader
+            def load_user(user_id):
+                return Societies.query.get(int(user_id))
             login_user(society)
             return "Logged in, welcome back " + str(society.name)
     return render_template('soclogin.html')
@@ -54,6 +59,9 @@ def stulogin():
         # query based on username
         user = Users.query.filter_by(zid = zid_check).first()
         if (password_check == user.password):
+            @login_manager.user_loader
+            def load_user(user_id):
+                return Users.query.get(int(user_id))
             login_user(user)
             return "Logged in, welcome back " + str(user.name)
     return render_template('stulogin.html')
@@ -123,6 +131,8 @@ def studash():
         query = Events.query.filter_by(secret_code=str(user_input)).first()
         # check if it matches
         if query:
+            query.registered_users = current_user
+            db.session.commit()
             return "Thanks for registering!"
         else:
             return redirect('studash')
