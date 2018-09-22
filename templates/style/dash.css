@@ -5,7 +5,7 @@
 body {
   margin:0;
   background-color: white;
-  font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+  font-family:ProximaNova-Black,"Helvetica Neue",Helvetica,Arial,sans-serif;
 
 }
 
@@ -17,14 +17,54 @@ body {
 }
 
 h1 {
-  border-bottom: 1px solid #333;
+  border-bottom: 2px solid #333;
   font-size: 30px;
   padding: 15px;
+  color:#89D458;
+  text-transform: uppercase;
 }
+
+input[type=text], select {
+  font-size: 40px;
+  border: none;
+  letter-spacing: 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-family:ProximaNova-Black,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+input[type=text]:focus {
+  	border:none;
+    box-sizing: border-box;
+  	outline:none;
+    transition: all 0.5s ease-in-out;
+  	-moz-transition: all 0.5s ease-in-out;
+  	-webkit-transition: all 0.5s ease-in-out;
+  }
+
+
+#studash-title {
+  position: absolute;'
+  color:#89D458;
+  border:none;
+  text-align: center;
+  font-size: 40px;
+  width: 100%;
+  top: 20%;
+}
+#studash-title h1 {
+  color:#89D458;
+  border:none;
+  font-size: 40px;
+}
+
 
 .event-container {
   padding: 10px;
-  border: 1px solid black;
+  border-bottom: 1px dashed #333;
+  background: #333;
 }
 
 #event-wrap {
@@ -35,22 +75,28 @@ h1 {
   font-weight:bold;
   font-size: 18px;
   width: 70%;
+  color:#89D458;
 
 }
 
+
 .event-time {
-  font-size: 12px;
+  font-size: 10px;
   width: 30%;
+  margin-top: 5px;
+  text-transform:uppercase;
+  color: #D3D3D3;
 }
 
 #footer {
   position: fixed;
   bottom: 0px;
   height: 60px;
-  border-top: 1px solid black;
+  border-top: 1px solid #333;
   width: 100%;
   overflow: hidden;
   text-align: center;
+  background-color: #454545;
 }
 
 /* navigation hover effect and style */
@@ -59,7 +105,7 @@ nav a:link{
     text-align: center;
     text-transform:uppercase;
     display:inline-block;
-    color:#80C0E8;
+    color:#89D458;
     transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out; /*this works in firefox*/
     -webkit-transition: all 0.2s ease-in-out; /*this works in chrome*/
@@ -70,12 +116,5 @@ nav a:link{
 
 
 nav a:visited {
-    color:#8FCADF;
-}
-
-nav a:hover {
-	color: white;
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out; /*this works in firefox*/
-    -webkit-transition: all 0.2s ease-in-out; /*this works in chrome*/
+    color:#89D458;
 }
