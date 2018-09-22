@@ -11,15 +11,6 @@ from models import Societies, Events, Users
 #this would be login
 @app.route('/', methods = ['GET', 'POST'])
 def index():
-    if request.method == "POST":
-        new_user = Users(zid = request.form['zid'],
-                    name = request.form['name'],
-                    arc = request.form['arc'],
-                    password = request.form['password'])
-        db.session.add(new_user)
-        db.session.commit()
-        if user_check.password == request.form['password']:
-                return "registered" ### TODO: REDIRECT TO LOGIN DASHBOARD
     return render_template('index.html')
 
 '''
@@ -53,9 +44,26 @@ def stulogin():
 
 @app.route('/sturegister')
 def sturegister():
+    if request.method == "POST":
+        new_user = Users(zid = request.form['zid'],
+                    name = request.form['name'],
+                    arc = request.form['arc'],
+                    password = request.form['password'])
+        db.session.add(new_user)
+        db.session.commit()
+        ### TODO: REDIRECT TO LOGIN DASHBOARD
+        return "Thanks for registering, " + new_user.name
     return render_template('sturegister.html')
 
 @app.route('/socregister')
 def socregister():
+    if request.method == "POST":
+        new_soc = Societies(name = request.form['name'],
+                    username = request.form['username'],
+                    password = request.form['password'],
+        db.session.add(new_soc)
+        db.session.commit()
+        ### TODO: REDIRECT TO LOGIN DASHBOARD
+        return "Thanks for registering, " + new_soc.name
     return socregister('socregister.html')
 
