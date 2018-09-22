@@ -14,19 +14,20 @@ class Users(UserMixin, db.Model):
     password = db.Column(db.String(60))
     arc = db.Boolean()
     zid = db.Column(db.String(8))
+    registered = db.Column(db.Integer, db.ForeignKey("registered.id"))
 
 class Events(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(100))
     location = db.Column(db.String(30))
-    starttime = db.Column(db.Time)
-    date = db.Column(db.Date)
+    #starttime = db.Column(db.Time)
+    #date = db.Column(db.Date)
     secret_code = db.String(6)
     registered_users = db.relationship("Registered", backref="event")
     society = db.Column(db.Integer,db.ForeignKey("societies.id"))
 
 class Registered(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    user_id = db.relationship("Users", backref="registered") 
+    user_id = db.relationship("Users", backref="registered_user") 
     event_id = db.Column(db.Integer,db.ForeignKey("events.id"))
 

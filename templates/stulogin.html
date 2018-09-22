@@ -111,11 +111,13 @@
   <body>
   <div id="wrap">
     <h1>ArcScan</h1>
+    <form method = "POST">
     <label> zID: </label> <br>
     <input name="zid" type="text" placeholder="Your zid...">
     <label> Password: </label><br>
     <input name="password" type="password" placeholder="Your password...">
     <input type="submit" value="login"> </input>
+  </form>
     <p></p>
     <h2>Don't have an account? </h2>
     <div class="register-buttton"><a href="{{url_for('sturegister')}}">Sign Up as a Student</a></div>

@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from random_key import *
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/main.db'
@@ -23,6 +24,7 @@ def load_user(user_id):
 #########################
 
 @app.route('/', methods = ['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
@@ -51,12 +53,13 @@ def soclogin():
 def stulogin():
     if request.method == "POST":
         zid_check = request.form.get('zid')
+        print (zid_check)
         password_check = request.form.get('password')
         # query based on username
         user = Users.query.filter_by(zid = zid_check).first()
         if (password_check == user.password):
             login_user(user)
-            return "Logged in, welcome back " + str(user.name)
+            return redirect('index')  
     return render_template('stulogin.html')
 
 @app.route('/sturegister', methods=['GET','POST']  )
@@ -100,20 +103,21 @@ def event(event_id):
 
 @app.route('/create', methods = ['GET','POST'])
 def create():
-    new_event = Events(name = request.form.get('name'),
+    if request.method == "POST":
+        new_event = Events(name = request.form.get('name'),
                 location = request.form.get('location'),
-                starttime = request.form.get('starttime'),
-                date = request.form.get('date'),
+                #date = request.form.get('date'),
                 secret_code = "000000",
                 society =  current_user.name)
-    db.session.add(new_event)
-    db.session.commit()
-    return render_template('create.html')
+        db.session.add(new_event)
+        db.session.commit()
+    return render_template('newevent.html')
 
 @app.route('/socdash', methods=['GET','POST'])
 def socdash():
     # query events based on society that's logged in
-    curr_soc_events = Events.query.filter_by(society=current_user.id).all()
+    #curr_soc_events = Events.query.filter_by(name = "MEME SOC").all()
+    curr_soc_events = Events.query.order_by(Events.name.desc()).all()
     return render_template('socdash.html', events=curr_soc_events, society = current_user.name)
 
 @app.route('/studash', methods=['GET', 'POST'])
