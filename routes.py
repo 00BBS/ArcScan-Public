@@ -1,11 +1,7 @@
-from server import app, system
-from flask import request, render_template, session
+from flask import Flask, request, render_template, session
 
-@app.route('/', methods = ['GET', 'POST'])
+app = Flask(__name__)
 
-
-@app.route('/profile/<user>', methods=['GET'])
-def profile(user):
-
-
-@app.route()
+@app.route('/', methods = ['GET'])
+def index():
+    return render_template('index.html')
