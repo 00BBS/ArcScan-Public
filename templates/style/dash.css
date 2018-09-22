@@ -14,6 +14,7 @@ body {
   background: white;
   position: absolute;
   width: 100%;
+  padding-bottom: 60px;
 }
 
 h1 {
@@ -22,6 +23,13 @@ h1 {
   padding: 15px;
   color:#89D458;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: 25px;
+  color: #89D458;
+  text-align: center;
+
 }
 
 #studash-title input[type=text], select {
@@ -161,4 +169,29 @@ nav a:visited {
   -moz-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   margin-bottom: 15px;
+}
+
+.display-code {
+  font-size: 30px;
+  line-height: 35px;
+  width: 100%;
+  text-align: center;
+  color: grey;
+  padding: 20px;
+}
+
+.code {
+  border-bottom: 7px dashed #454545;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+#display-code-wrap {
+  padding: 0px 30px 30px 30px;
+}
+#registered-wrap {
+  padding: 10px 30px 30px 30px;
+  color: white;
+  background-color:  #454545;
+  margin: 10px;
+  font-weight: bold;
 }
