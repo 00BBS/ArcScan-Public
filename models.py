@@ -20,4 +20,5 @@ class Events(db.Model):
     location = db.Column(db.String(30))
     starttime = db.Column(db.Time)
     date = db.Column(db.Date)
+    secret_code = db.String(6)
     society = db.Column(db.Integer,db.ForeignKey("societies.id"))
