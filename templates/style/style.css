@@ -11,6 +11,7 @@
     position: absolute;
     width:calc(100% - 60px);
     top: 0px;
+    color: white;
     left: 30px;
     z-index: 100;
 
@@ -80,4 +81,15 @@
     color: #91E15C;
     font-size: 40px;
     text-align: center;
+  }
+  h2 {
+    color: white;
+    font-size: 20px;
+  }
+
+  .register-botton {
+    background-color: #91E15C;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
   }
