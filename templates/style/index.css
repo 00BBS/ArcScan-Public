@@ -11,7 +11,15 @@ body {
 
 #header h1 {
     color:#89D458;
+    font-size: 45px;
+
 }
+
+#header img {
+  height:60px;
+}
+
+
 
 #header {
   background-color: #333;
