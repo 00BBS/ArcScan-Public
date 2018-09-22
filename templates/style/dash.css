@@ -51,7 +51,7 @@ input[type="submit"]{
   -webkit-transition: all 0.5s ease-in-out;
 }
 
-#studash-title input[type="submit"]:focus {
+input[type="submit"]:focus {
   border: 1px solid #333;
   background: #333;
   color: white;
@@ -147,6 +147,8 @@ nav a:visited {
   padding: 30px;
 }
 #new-event-wrap input[type=text], select, #new-event-wrap input[type=time], #new-event-wrap input[type=date] {
+  outline: none;
+  border: none;
   width: 100%;
   padding-top: 15px;
   display: inline-block;
