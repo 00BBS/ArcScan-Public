@@ -6,9 +6,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, curren
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/main.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-
-from models import Societies, Events, Users
+db = SQLAlchemy(app) from models import Societies, Events, Users
 
 ## Flask-Login configs ##
 login_manager = LoginManager()
@@ -103,8 +101,9 @@ def create:
 
 @app.route('/socdash', methods=['GET','POST'])
 def socdash():
-    events = Events.query.order_by(Events.starttime.desc()).all()
-    return render_template('socdash.html', events=events)
+    # query events based on society that's logged in
+    curr_soc_events = Events.query.order_by(society=current_user.id).all()
+    return render_template('socdash.html', events=curr_soc_events, society = current_user.name)
 
 @app.route('/logout')
 def logout:
