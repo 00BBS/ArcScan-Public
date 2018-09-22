@@ -4,120 +4,30 @@
     <meta charset="utf-8">
     <title>ArcScan</title>
     <link rel="shortcut icon" type="image/gif" href="images/cutefavicon.gif">
-
+    <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  <style>
-  body, html{
-    background:#333333;
-    height: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
-  }
-  label{
-    color:#91E15C;
-    font-size:24px;
-    line-height: 30px;
-  }
 
-  #wrap {
-    width: 100%;
-    margin-left:30px;
-    margin-right:30px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-
-  }
-
-  input[type=text], select{
-
-    padding: 10px 10px;
-    display: inline-block;
-    font-size:16px;
-    border:none;
-    line-height:18px;
-    border-bottom: 2px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    margin-bottom: 15px;
-  }
-
-  input[type=text]:focus{
-    display: inline-block;
-    line-height:18px;
-    font-size:16px;
-    border:none;
-    border-bottom: 2px solid #3B84D1;
-    box-sizing: border-box;
-    outline:none;
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-  }
-
-
-  .notes{
-    height:80px;
-    resize:none;
-  }
-
-  input[type="submit"]{
-    background-color:white;
-    width: 140px;
-    border: 1px solid #91E15C ;
-    margin-top: 10px;
-    color:#91E15C;
-    height: 40px;
-    box-shadow:none;
-    border-radius: 0px;
-    vertical-align: center;
-    text-transform:uppercase;
-
-  }
-  h1 {
-    color: #91E15C;
-
-  }
-  #wrap {
-    width: 100%;
-  }
-  #background {
-    position: fixed;
-    width: 100%;
-    /*background-image:url(images/Movie-Night.jpg);*/
-    height:calc(100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    outline-offset: -50px;
-    z-index: 1;
-  }
-
-  </style>
   </head>
 
   <body>
-  <div id="background">
+  <div id="wrap">
     <h1>ArcScan</h1>
 
     <div id="form" >
     <form METHOD = "POST">
 
         <label> zID: </label><br/>
-        <input name="zid" placeholder="Your zid...">
+        <input name="zid" type="text" placeholder="Your zid...">
         <br/>
         <label> Name: </label><br/>
-        <input name="name" placeholder="Your name...">
+        <input name="name" type="text" placeholder="Your name...">
         <br/>
-        <label> arc: </label><br/>
+        <label> Arc Member? </label><br/>
         <input type="checkbox" name="arc" placeholder="Your password...">
         <br/>
         <label> Password: </label><br/>
         <input name="password" type="password" placeholder="Your password...">
-        
+
     <input type="submit" value="submit"> </input>
     </form>
   </div>
