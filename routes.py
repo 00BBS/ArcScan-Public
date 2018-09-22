@@ -101,7 +101,10 @@ def create:
     db.session.commit()
     return render_template('create.html')
 
-
+@app.route('/socdash', methods=['GET','POST'])
+def socdash():
+    events = Events.query.order_by(Events.starttime.desc()).all()
+    return render_template('socdash.html', events=events)
 
 
 
