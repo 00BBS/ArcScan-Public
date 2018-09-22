@@ -6,11 +6,59 @@
     <link rel="shortcut icon" type="image/gif" href="images/cutefavicon.gif">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <style>
+  body, html{
+    height: 100%;
+    margin: 0;
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+  }
+  h1 {
+    color: #91E15C;
 
+  }
+  #wrap {
+    width: 100%;
+  }
+  #background {
+    background:#333333;
+    position: fixed;
+    width: 100%;
+    /*background-image:url(images/Movie-Night.jpg);*/
+    height:calc(100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    outline-offset: -50px;
+
+    z-index: 1;
+  }
+
+  </style>
   </head>
 
   <body>
+  <div id="background">
+    <h1>ArcScan</h1>
+    <input type="submit" value="submit"> </input>
+    <input type="submit" value="submit"> </input>
 
+    <div id="form" >
+    <form METHOD = "POST">
+
+       <label for="first-name">First name</label> <br>
+       <input type="text" name="firstname" placeholder="Your name..">
+       <br>
+       <label for="last-name">Last name</label> <br>
+       <input type="text" name="firstname" placeholder="Your name..">
+       <br>
+       <label for="zID">zID</label> <br>
+       <input type="number" name="zID" placeholder="zXXXXXXX">
+       <br>
+       <label for="arc">Arc Member?</label> <br>
+       <input type="checkbox" name="arc" value="yes"> Yes
+       <input type="checkbox" name="arc" value="no"> No
+    </form>
+  </div>
 
 
   </body>
