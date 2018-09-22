@@ -18,7 +18,7 @@ login_manager.login_view='/'
 
 @login_manager.user_loader
 def load_user(user_id):
-    return Users.query.get(int(user_id))
+    return Societies.query.get(int(user_id))
 
 #########################
 
@@ -43,7 +43,8 @@ def soclogin():
         society = Societies.query.filter_by(username = username_check).first()
         if (password_check == society.password):
             login_user(society)
-            return "Logged in, welcome back " + str(society.name)
+            #"Logged in, welcome back " + str(society.name)
+            return redirect('socdash')  
     return render_template('soclogin.html')
 
 @app.route('/stulogin', methods=['GET','POST'])
@@ -114,6 +115,19 @@ def socdash():
     # query events based on society that's logged in
     curr_soc_events = Events.query.filter_by(society=current_user.id).all()
     return render_template('socdash.html', events=curr_soc_events, society = current_user.name)
+
+@app.route('/studash', methods=['GET', 'POST'])
+def studash():
+    # get input
+    if request.method == "POST":
+        user_input = request.form.get('input')
+        query = Events.query.filter_by(secret_code=str(user_input)).first()
+        # check if it matches
+        if query:
+            return "Thanks for registering!"
+        else:
+            return redirect('studash')
+
 
 @app.route('/logout')
 def logout():
