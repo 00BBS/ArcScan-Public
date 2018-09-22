@@ -24,8 +24,16 @@ def index():
 
 '''
 @app.route('/profile/<user>', methods = ['GET']
-	if:
-		return render_template('profSoc.html')
-	else:
-		return render_template('profInd.html')
+        if:
+                return render_template('profSoc.html')
+        else:
+                return render_template('profInd.html')
 '''
+@app.route('/soclogin')
+def soclogin():
+    return render_template('soclogin.html')
+
+@app.route('/stulogin')
+def stulogin():
+    return render_template('stulogin.html')
+
