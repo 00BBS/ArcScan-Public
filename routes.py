@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session
+from flask import Flask, request, render_template, session, redirect
 from flask_sqlalchemy import SQLAlchemy
 from random_key import *
 from flask_login import LoginManager, UserMixin, login_user, logout_user, current_user
@@ -106,7 +106,10 @@ def socdash():
     events = Events.query.order_by(Events.starttime.desc()).all()
     return render_template('socdash.html', events=events)
 
-
+@app.route('/logout')
+def logout:
+    logout_user
+    return redirect('/index')
 
 
 
